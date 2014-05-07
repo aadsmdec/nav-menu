@@ -48,10 +48,11 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     handleSwipe: {
         value: function(event) {
             if (event.direction === "RIGHT") {
-                if (event.dX > 100) {
-                    
+                var menu = this.templateObjects.menu;
+                if (event.dX > 50) {
+                    menu.element.style.flexBasis = "200px";
                 } else {
-                    
+                    menu.element.style.flexBasis = 0;
                 }
             }
             console.log("SWIPE", event.direction, event.dX);
