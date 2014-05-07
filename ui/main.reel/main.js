@@ -52,8 +52,8 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     handleTranslateEnd: {
         value: function(event) {
             var menu = this.templateObjects.menu;
-            var shouldClose = this._menuClosed && event.translateX < 50 ||
-                              !this._menuClosed && event.translateX < 150;
+            var shouldClose = (this._menuClosed && event.translateX < 50) ||
+                              (!this._menuClosed && event.translateX < 150);
                 
             if (shouldClose) {
                 menu.element.style.flexBasis = 0;
