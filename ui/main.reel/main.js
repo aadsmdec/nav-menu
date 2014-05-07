@@ -30,13 +30,22 @@ exports.Main = Component.specialize(/** @lends Main# */ {
                 var swipeComposer = this.templateObjects.swipeComposer;
                 
                 swipeComposer.addEventListener("swipemove", this, false);
+                swipeComposer.addEventListener("swipe", this, false);
             }
         }
     },
     
     handleSwipemove: {
         value: function(event) {
+            if (event.direction === "RIGHT") {
+            }
             console.log(event.direction, event.dX);
+        }
+    },
+    
+    handleSwipe: {
+        value: function(event) {
+            console.log("SWIPE");
         }
     }
 });
