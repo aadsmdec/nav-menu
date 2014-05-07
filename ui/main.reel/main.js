@@ -58,10 +58,13 @@ exports.Main = Component.specialize(/** @lends Main# */ {
                 var menu = this.templateObjects.menu;
                 if (event.translateX > 50) {
                     menu.element.style.flexBasis = "200px";
+                    this.templateObjects.translateComposer.translateX = 200;
                 } else {
                     menu.element.style.flexBasis = 0;
+                    this.templateObjects.translateComposer.translateX = 0;
                 }
             //}
+            
             console.log("End", event.translateX);
         }
     }
