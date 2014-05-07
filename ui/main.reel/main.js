@@ -45,7 +45,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     handleSwipe: {
         value: function(event) {
-            console.log("SWIPE");
+            console.log("SWIPE", event.direction, event.dX);
         }
     }
 });
