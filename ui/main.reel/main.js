@@ -38,6 +38,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     handleSwipemove: {
         value: function(event) {
             if (event.direction === "RIGHT") {
+                this.templateObjects.content.element.style.flexBasis = event.dX + "px";
             }
             console.log(event.direction, event.dX);
         }
@@ -45,6 +46,13 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     handleSwipe: {
         value: function(event) {
+            if (event.direction === "RIGHT") {
+                if (event.dX > 100) {
+                    
+                } else {
+                    
+                }
+            }
             console.log("SWIPE", event.direction, event.dX);
         }
     }
