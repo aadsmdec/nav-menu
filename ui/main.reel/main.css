@@ -8,6 +8,6 @@
 
 .Main-content {
     height: 400px;
-    overflow: hidden;
+    overflow-y: scroll;
     flex-grow: 1;
 }
