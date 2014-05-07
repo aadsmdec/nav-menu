@@ -1,0 +1,39 @@
+{
+  "blueprint_component_reference": {
+    "prototype": "montage/core/meta/blueprint-reference",
+    "properties": {
+      "valueReference": {
+        "blueprintName": "Component",
+        "blueprintModule": {
+          "%": "montage/ui/component.meta"
+        }
+      }
+    }
+  },
+  "blueprint_unnamed_content": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "content",
+      "blueprint": {"@": "root"}
+    }
+  },
+  "root": {
+    "prototype": "montage/core/meta/module-blueprint",
+    "properties": {
+      "name": null,
+      "parent": {"@": "blueprint_component_reference"},
+      "propertyBlueprints": [
+        {"@": "blueprint_unnamed_content"}
+      ],
+      "propertyBlueprintGroups": {
+        "Menu": [
+          {"@": "blueprint_unnamed_content"}
+        ]
+      },
+      "module": {
+        "%": "ui/menu.reel"
+      },
+      "exportName": "Menu"
+    }
+  }
+}
