@@ -29,13 +29,13 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             if (firstTime) {
                 var swipeComposer = this.templateObjects.swipeComposer;
                 
-                swipeComposer.addEventListener("swipemove", this, false);
-                swipeComposer.addEventListener("swipe", this, false);
+                swipeComposer.addEventListener("translate", this, false);
+                swipeComposer.addEventListener("translateEnd", this, false);
             }
         }
     },
     
-    handleSwipemove: {
+    handleTranslate: {
         value: function(event) {
             //if (event.direction === "RIGHT") {
                 var menu = this.templateObjects.menu;
@@ -45,7 +45,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         }
     },
     
-    handleSwipe: {
+    handleTranslateEnd: {
         value: function(event) {
             //if (event.direction === "RIGHT") {
                 var menu = this.templateObjects.menu;
