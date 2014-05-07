@@ -38,7 +38,8 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     handleSwipemove: {
         value: function(event) {
             if (event.direction === "RIGHT") {
-                this.templateObjects.content.element.style.flexBasis = event.dX + "px";
+                var menu = this.templateObjects.menu;
+                menu.element.style.flexBasis = event.dX + "px";
             }
             console.log(event.direction, event.dX);
         }
