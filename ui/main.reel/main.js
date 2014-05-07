@@ -36,7 +36,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     },
     
     _menuClosed: {
-        value: true;
+        value: true
     },
     
     handleTranslate: {
