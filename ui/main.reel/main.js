@@ -35,15 +35,26 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         }
     },
     
+    draw: {
+        value: function() {
+            this.templateObjects.menu.element.style.flexBasis = this._menuOffset + "px";
+        }
+    },
+    
     _menuClosed: {
         value: true
+    },
+    
+    _menuOffset: {
+        value: 0
     },
     
     handleTranslate: {
         value: function(event) {
             var menu = this.templateObjects.menu;
             
-            menu.element.style.flexBasis = event.translateX + "px";
+            this._menuOffset = event.translateX + "px";
+            this.needsDraw = true;
             //console.log(event.translateX);
         }
     },
@@ -56,14 +67,16 @@ exports.Main = Component.specialize(/** @lends Main# */ {
                               (!this._menuClosed && event.translateX < 150);
                 
             if (shouldClose) {
-                menu.element.style.flexBasis = 0;
+                this._menuOffset = 0;
                 translateComposer.translateX = 0;
                 this._menuClosed = true;
             } else {
-                menu.element.style.flexBasis = "200px";
+                this._menuOffset = 200;
                 translateComposer.translateX = 200;
                 this._menuClosed = false;
             }
+            
+            this.needsDraw = true;
         }
     }
 });
