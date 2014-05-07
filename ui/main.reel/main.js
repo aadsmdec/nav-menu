@@ -18,6 +18,9 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     templateDidLoad: {
         value: function() {
             this.templateObjects.content.content = new Array(30).join("a,").split(",");
+            this.templateObjects.menu.content = [
+                "Profile", "Actions", "Games", "Friends", "Settings", "Logout"
+            ];
         }
     }
 });
