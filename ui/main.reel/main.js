@@ -37,7 +37,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     draw: {
         value: function() {
-            this.templateObjects.menu.element.style.flexBasis = this._menuOffset + "px";
+            this._menuElement.style.flexBasis = this._menuOffset + "px";
         }
     },
     
@@ -62,7 +62,6 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     handleTranslateEnd: {
         value: function(event) {
             var translateComposer = this.templateObjects.translateComposer;
-            var menu = this.templateObjects.menu;
             var shouldClose = (this._menuClosed && event.translateX < 50) ||
                               (!this._menuClosed && event.translateX < 150);
                 
