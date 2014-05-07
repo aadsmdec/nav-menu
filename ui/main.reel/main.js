@@ -27,7 +27,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     enterDocument: {
         value: function(firstTime) {
             if (firstTime) {
-                var swipeComposer = this.templateObjects.swipeComposer;
+                var translateComposer = this.templateObjects.translateComposer;
                 
                 swipeComposer.addEventListener("translate", this, false);
                 swipeComposer.addEventListener("translateEnd", this, false);
