@@ -37,7 +37,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     draw: {
         value: function() {
-            this._menuElement.style.flexBasis = this._menuOffset + "px";
+            this.templateObjects.menu.element.style.flexBasis = this._menuOffset + "px";
         }
     },
     
