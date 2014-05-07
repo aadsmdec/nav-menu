@@ -49,6 +49,10 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: 0
     },
     
+    menuTreshold: {
+        value: 50
+    },
+    
     handleTranslate: {
         value: function(event) {
             var menu = this.templateObjects.menu;
@@ -62,8 +66,8 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     handleTranslateEnd: {
         value: function(event) {
             var translateComposer = this.templateObjects.translateComposer;
-            var shouldClose = (this._menuClosed && event.translateX < 50) ||
-                              (!this._menuClosed && event.translateX < 150);
+            var shouldClose = (this._menuClosed && event.translateX < this.menuTreshold) ||
+                              (!this._menuClosed && event.translateX < 200 - this.menuTreshold);
                 
             if (shouldClose) {
                 this._menuOffset = 0;
