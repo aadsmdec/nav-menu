@@ -9,12 +9,26 @@
             "properties": {
                 "element": {"#": "owner"}
             }
+        },
+        "list": {
+            "prototype": "digit/ui/list.reel",
+            "properties": {
+                "element": {"#": "list"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.content"}
+            }
         }
     }
     </script>
 </head>
 <body>
     <div data-montage-id="owner" class="Content">
+        <ul data-montage-id="list">
+            <li>
+                Item
+            </li>
+        </ul>
     </div>
 </body>
 </html>

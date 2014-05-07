@@ -2,21 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Main</title>
-
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
-                }
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"}
+            }
+        },
+        "content": {
+            "prototype": "ui/content.reel",
+            "properties": {
+                "element": {"#": "content"}
+            }
+        },
+        "menu": {
+            "prototype": "ui/menu.reel",
+            "properties": {
+                "element": {"#": "menu"}
             }
         }
+    }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" data-montage-skin="light" class="Main"></div>
+    <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <div data-montage-id="menu"></div>
+        <div data-montage-id="content"></div>
+    </div>
 </body>
 </html>
