@@ -37,24 +37,24 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     handleSwipemove: {
         value: function(event) {
-            if (event.direction === "RIGHT") {
+            //if (event.direction === "RIGHT") {
                 var menu = this.templateObjects.menu;
                 menu.element.style.flexBasis = event.dX + "px";
-            }
+            //}
             console.log(event.direction, event.dX);
         }
     },
     
     handleSwipe: {
         value: function(event) {
-            if (event.direction === "RIGHT") {
+            //if (event.direction === "RIGHT") {
                 var menu = this.templateObjects.menu;
                 if (event.dX > 50) {
                     menu.element.style.flexBasis = "200px";
                 } else {
                     menu.element.style.flexBasis = 0;
                 }
-            }
+            //}
             console.log("SWIPE", event.direction, event.dX);
         }
     }
