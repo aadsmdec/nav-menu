@@ -29,17 +29,14 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             if (firstTime) {
                 var translateComposer = this.templateObjects.translateComposer;
                 
-                translateComposer.addEventListener("translateStart", this, false);
                 translateComposer.addEventListener("translate", this, false);
                 translateComposer.addEventListener("translateEnd", this, false);
             }
         }
     },
     
-    handleTranslateStart: {
-        value: function(event) {
-            console.log("START: ", event.translateX);
-        }
+    _menuClosed: {
+        value: true;
     },
     
     handleTranslate: {
@@ -54,16 +51,19 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     handleTranslateEnd: {
         value: function(event) {
-            //if (event.direction === "RIGHT") {
-                var menu = this.templateObjects.menu;
-                if (event.translateX > 50) {
-                    menu.element.style.flexBasis = "200px";
-                    this.templateObjects.translateComposer.translateX = 200;
-                } else {
-                    menu.element.style.flexBasis = 0;
-                    this.templateObjects.translateComposer.translateX = 0;
-                }
-            //}
+            var menu = this.templateObjects.menu;
+            var shouldClose = this._menuClosed && event.translateX < 50 ||
+                              !this._menuClosed && event.translateX < 150;
+                
+            if (shouldClose) {
+                menu.element.style.flexBasis = 0;
+                this.templateObjects.translateComposer.translateX = 0;
+                this._menuClosed = true;
+            } else {
+                menu.element.style.flexBasis = "200px";
+                this.templateObjects.translateComposer.translateX = 200;
+                this._menuClosed = false;
+            }
             
             console.log("End", event.translateX);
         }
