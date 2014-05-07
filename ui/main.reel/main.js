@@ -41,31 +41,29 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     handleTranslate: {
         value: function(event) {
-            //if (event.direction === "RIGHT") {
-                var menu = this.templateObjects.menu;
-                menu.element.style.flexBasis = event.translateX + "px";
-            //}
-            console.log(event.translateX);
+            var menu = this.templateObjects.menu;
+            
+            menu.element.style.flexBasis = event.translateX + "px";
+            //console.log(event.translateX);
         }
     },
     
     handleTranslateEnd: {
         value: function(event) {
+            var translateComposer = this.templateObjects.translateComposer;
             var menu = this.templateObjects.menu;
             var shouldClose = (this._menuClosed && event.translateX < 50) ||
                               (!this._menuClosed && event.translateX < 150);
                 
             if (shouldClose) {
                 menu.element.style.flexBasis = 0;
-                this.templateObjects.translateComposer.translateX = 0;
+                translateComposer.translateX = 0;
                 this._menuClosed = true;
             } else {
                 menu.element.style.flexBasis = "200px";
-                this.templateObjects.translateComposer.translateX = 200;
+                translateComposer.translateX = 200;
                 this._menuClosed = false;
             }
-            
-            console.log("End", event.translateX);
         }
     }
 });
