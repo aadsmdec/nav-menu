@@ -22,5 +22,21 @@ exports.Main = Component.specialize(/** @lends Main# */ {
                 "Profile", "Actions", "Games", "Friends", "Settings", "Logout"
             ];
         }
+    },
+    
+    enterDocument: {
+        value: function(firstTime) {
+            if (firstTime) {
+                var swipeComposer = this.templateObjects.swipeComposer;
+                
+                swipeComposer.addEventListener("swipeMove", this, false);
+            }
+        }
+    },
+    
+    handleSwipeMove: {
+        value: function(event) {
+            console.log(event.direction, event.dX);
+        }
     }
 });
