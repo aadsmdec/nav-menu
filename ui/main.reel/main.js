@@ -53,7 +53,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function(event) {
             var menu = this.templateObjects.menu;
             
-            this._menuOffset = event.translateX + "px";
+            this._menuOffset = event.translateX;
             this.needsDraw = true;
             //console.log(event.translateX);
         }
