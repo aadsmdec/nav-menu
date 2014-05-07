@@ -29,8 +29,8 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             if (firstTime) {
                 var translateComposer = this.templateObjects.translateComposer;
                 
-                swipeComposer.addEventListener("translate", this, false);
-                swipeComposer.addEventListener("translateEnd", this, false);
+                translateComposer.addEventListener("translate", this, false);
+                translateComposer.addEventListener("translateEnd", this, false);
             }
         }
     },
