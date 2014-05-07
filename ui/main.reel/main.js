@@ -29,9 +29,16 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             if (firstTime) {
                 var translateComposer = this.templateObjects.translateComposer;
                 
+                translateComposer.addEventListener("translateStart", this, false);
                 translateComposer.addEventListener("translate", this, false);
                 translateComposer.addEventListener("translateEnd", this, false);
             }
+        }
+    },
+    
+    handleTranslateStart: {
+        value: function(event) {
+            console.log("START: ", event.translateX);
         }
     },
     
