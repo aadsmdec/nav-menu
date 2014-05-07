@@ -39,9 +39,9 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function(event) {
             //if (event.direction === "RIGHT") {
                 var menu = this.templateObjects.menu;
-                menu.element.style.flexBasis = event.dX + "px";
+                menu.element.style.flexBasis = event.translateX + "px";
             //}
-            console.log(event.direction, event.dX);
+            console.log(event.translateX);
         }
     },
     
@@ -49,13 +49,13 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function(event) {
             //if (event.direction === "RIGHT") {
                 var menu = this.templateObjects.menu;
-                if (event.dX > 50) {
+                if (event.translateX > 50) {
                     menu.element.style.flexBasis = "200px";
                 } else {
                     menu.element.style.flexBasis = 0;
                 }
             //}
-            console.log("SWIPE", event.direction, event.dX);
+            console.log("End", event.translateX);
         }
     }
 });
