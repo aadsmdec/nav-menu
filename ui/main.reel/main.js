@@ -21,6 +21,11 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             this.templateObjects.menu.content = [
                 "Profile", "Actions", "Games", "Friends", "Settings", "Logout"
             ];
+            this.templateObjects.repetition.content = [
+                {"title": "Shaun", "description": "is the protagonist of the series."},
+                {"title": "Bitzer", "description": "is the farmer's loyal, long-suffering sheepdog."},
+                {"title": "Shirley", "description": "is the largest member of the flock."}
+            ];
         }
     },
     
